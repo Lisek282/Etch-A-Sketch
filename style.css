@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  background: darkblue;
+}
+
+main{
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel{
+  width: 16px;
+  height: 16px;
+  background: white;
+}
