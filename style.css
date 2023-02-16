@@ -23,3 +23,7 @@ main{
   height: 10px;
   background: white;
 }
+
+.pixel:hover{
+  background: black;
+}

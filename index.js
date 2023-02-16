@@ -1,9 +1,20 @@
 const canvasContainer = document.getElementById("canvasContainer")
-const pixel = document.createElement('div')
-pixel.classList.add('pixel')
+
 
 function createPixel() {
   const pixel = document.createElement('div')
+
+  function draw(){
+    pixel.style.background = 'black'
+  }
+
+  canvasContainer.addEventListener("mousedown", () => {
+      pixel.addEventListener('mousemove', draw)
+  })
+
+  canvasContainer.addEventListener('mouseup', () => {
+    pixel.removeEventListener('mousemove', draw)
+  })
 
   pixel.classList.add('pixel')
   canvasContainer.appendChild(pixel)
@@ -11,10 +22,12 @@ function createPixel() {
 
 function createCanvas(columns, rows){
     const canvasSize = columns * rows
+    
+    canvasContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${columns}, 10px)`)
 
     for (let i = 0; i < canvasSize; i++){
       createPixel()
     }
 }
 
-createCanvas(4, 4)
+createCanvas(16, 16)
