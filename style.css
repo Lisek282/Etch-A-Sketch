@@ -18,9 +18,13 @@ main{
   align-items: center;
 }
 
+#canvasContainer{
+  width: 960px;
+  height: 960px;
+}
+
 .pixel{
-  width: 10px;
-  height: 10px;
+  width: auto;
   background: white;
 }
 

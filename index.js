@@ -22,12 +22,12 @@ function createPixel() {
 
 function createCanvas(columns, rows){
     const canvasSize = columns * rows
-    
-    canvasContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${columns}, 10px)`)
+
+    canvasContainer.setAttribute('style', `display: grid; grid-template-columns: repeat(${columns}, auto)`)
 
     for (let i = 0; i < canvasSize; i++){
       createPixel()
     }
 }
 
-createCanvas(16, 16)
+createCanvas(100, 100)
