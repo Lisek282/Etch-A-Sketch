@@ -11,17 +11,11 @@ function clearCanvas(){
 function createPixel() {
   const pixel = document.createElement('div')
   
-  function draw(){
-    pixel.style.background = "black"
+  function draw(color = 'black'){ 
+    pixel.style.background = color
   }
   
-  canvasContainer.addEventListener("mousedown", () => {
-    pixel.addEventListener('mousemove', draw)
-  })
-  
-  canvasContainer.addEventListener('mouseup', () => {
-    pixel.removeEventListener('mousemove', draw)
-  })
+  pixel.addEventListener('mouseenter', () => draw())
   
   pixel.classList.add('pixel')
   canvasContainer.appendChild(pixel)
